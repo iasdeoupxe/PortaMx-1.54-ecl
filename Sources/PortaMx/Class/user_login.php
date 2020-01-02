@@ -109,6 +109,7 @@ class pmxc_user_login extends PortaMxC_SystemBlock
 				echo '
 									<div style="padding-top:4px;">
 										<form action="'. $scripturl .'?action=login2" method="post">
+											<input type="hidden" name="', $context['session_var'], '" value="', $context['session_id'], '" />
 											<input type="text" name="user" value="" style="width:42%;float:'. $L_R .';margin-bottom:3px;" />
 											<input type="password" name="passwrd" value="" style="width:42%;float:'. $R_L .';margin-bottom:3px;margin-'. $R_L .':4px;" />';
 
