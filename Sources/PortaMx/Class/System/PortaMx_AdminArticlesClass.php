@@ -27,7 +27,7 @@ class PortaMxC_AdminArticles
 	* Saved the config, load the article css file if exist.
 	* Have the article a css file, the class definition is extracted from ccs header
 	*/
-	function PortaMxC_AdminArticles($config)
+	function __construct($config)
 	{
 		global $context, $settings;
 

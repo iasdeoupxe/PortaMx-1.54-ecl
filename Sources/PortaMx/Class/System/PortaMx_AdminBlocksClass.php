@@ -28,7 +28,7 @@ class PortaMxC_AdminBlocks
 	* Saved the config, load the block css if exist.
 	* Have the block a css file, the class definition is extracted from ccs header
 	*/
-	function PortaMxC_AdminBlocks($blockconfig)
+	function __construct($blockconfig)
 	{
 		global $context, $settings;
 

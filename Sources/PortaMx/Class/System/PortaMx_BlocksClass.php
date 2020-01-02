@@ -36,7 +36,7 @@ class PortaMxC_Blocks
 	* Saved the config and checks the visiblity access.
 	* If access true, the block css file is loaded if exist.
 	*/
-	function PortaMxC_Blocks($blockconfig, &$visible)
+	function __construct($blockconfig, &$visible)
 	{
 		global $context, $options, $user_info, $settings, $mbname, $scripturl, $modSettings, $maintenance;
 

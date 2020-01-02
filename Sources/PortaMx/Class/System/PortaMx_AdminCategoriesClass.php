@@ -27,7 +27,7 @@ class PortaMxC_AdminCategories
 	* Saved the config, load the category css file if exist.
 	* Have the category a css file, the class definition is extracted from ccs header
 	*/
-	function PortaMxC_AdminCategories($config)
+	function __construct($config)
 	{
 		global $context, $settings;
 

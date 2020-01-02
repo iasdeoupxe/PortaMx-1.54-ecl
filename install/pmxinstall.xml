@@ -260,15 +260,17 @@ function loadUserSettings()
 {
 	global $modSettings, $user_settings, $sourcedir, $smcFunc;
 	global $cookiename, $user_info, $language;
+	global $boardurl, $image_proxy_enabled, $image_proxy_secret;
 
 	// Check first the integration, then the cookie, and last the session.
 	if (count($integration_ids = call_integration_hook('integrate_verify_user')) > 0)
 ]]></search>
 			<add><![CDATA[
-function loadUserSettings($checkOnly = false)
+function loadUserSettings()
 {
 	global $modSettings, $user_settings, $sourcedir, $smcFunc;
 	global $cookiename, $user_info, $language;
+	global $boardurl, $image_proxy_enabled, $image_proxy_secret;
 
 	// Check first the integration, then the cookie, and last the session.
 	if (empty($checkOnly) && count($integration_ids = call_integration_hook('integrate_verify_user')) > 0)
@@ -384,7 +386,7 @@ function loadSession()
 			<search position="before"><![CDATA[
 function Login()
 {
-	global $txt, $context, $scripturl;
+	global $txt, $context, $scripturl, $smcFunc;
 ]]></search>
 			<add><![CDATA[
 	if(!pmx_checkECL_Cookie())
