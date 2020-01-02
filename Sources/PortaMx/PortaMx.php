@@ -331,7 +331,7 @@ function pmx_MakeLinktree()
 		$context['page_title'] = $context['forum_name'];
 
 	// build the linktree
-	$pmxforum = '';
+	$pmxforum = array();
 	if(empty($context['linktree']))
 		$context['linktree'] = array(array('url' => $scripturl, 'name' => $mbname));
 
