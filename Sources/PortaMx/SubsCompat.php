@@ -297,7 +297,7 @@ function pmx_IsMobile()
 		'mobi',
 	);
 
-	$useragent = strtolower($_SERVER['HTTP_USER_AGENT']);
+	$useragent = isset($_SERVER['HTTP_USER_AGENT']) ? strtolower($_SERVER['HTTP_USER_AGENT']) : '';
 	if(preg_match_all('~'. implode('\b|', $mobileStrings) .'\b~i', $useragent, $device))
 		$modSettings['pmx_isMobile'] = true;
 }
