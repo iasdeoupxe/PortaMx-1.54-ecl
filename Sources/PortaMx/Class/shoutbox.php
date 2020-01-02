@@ -247,7 +247,7 @@ class pmxc_shoutbox extends PortaMxC_SystemBlock
 				FROM {db_prefix}members AS mem
 				LEFT JOIN {db_prefix}membergroups AS mg ON ('. (!empty($modSettings['permission_enable_postgroups']) ? '(mg.id_group = 0 AND mg.id_group = mem.id_post_group OR mg.id_group > 0 AND mg.id_group = mem.id_group)' : 'mg.id_group = mem.id_group') .' OR FIND_IN_SET(mg.id_group, mem.additional_groups) != 0)
 				WHERE mem.id_member IN ({array_int:members})
-				GROUP BY mem.id_member, mg.online_color',
+				GROUP BY mem.id_member',
 				array(
 					'members' => array_unique($members),
 					'empty' => '',
