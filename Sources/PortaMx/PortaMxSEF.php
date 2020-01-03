@@ -3,10 +3,10 @@
 * \file PortaMxSEF.php
 * SEF functions for Portamx.
 *
-* \author Copyright 2008-2015 by PortaMx corp. - http://portamx.com
+* \author Copyright 2008-2020 by PortaMx corp. - http://portamx.com
 * \author Developer of the Original Code is Matt Zuba.
-* \version 1.54
-* \date 18.11.2015
+* \version 1.54.1
+* \date 03.01.2020
 *
 * BEGIN LICENSE BLOCK
 * Version: MPL 1.1

@@ -2,10 +2,10 @@
 <!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
 <package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
 
-	<name>PortaMx 1.54 ecl</name>
+	<name>PortaMx 1.54.1 ecl</name>
 	<id>portamx_corp:PortaMx</id>
 	<type>modification</type>
-	<version>1.54</version>
+	<version>1.54.1</version>
 
 	<install for="2.0*">
 		<readme type="file" parsebbc="true">install/readme.bbc</readme>

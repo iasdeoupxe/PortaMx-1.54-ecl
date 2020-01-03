@@ -5,9 +5,9 @@
 * Checks the values and saved the parameter to the database.
 *
 * \author PortaMx - Portal Management Extension
-* \author Copyright 2008-2015 by PortaMx corp. - http://portamx.com
-* \version 1.54
-* \date 18.11.2015
+* \author Copyright 2008-2020 by PortaMx corp. - http://portamx.com
+* \version 1.54.1
+* \date 03.01.2020
 */
 
 if(!defined('PortaMx'))
