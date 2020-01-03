@@ -402,9 +402,6 @@ function PortaMx_AdminArticles()
 							pmxPHP_convert();
 					}
 
-					// remove relative pathes/urls in content
-					$_POST['content'] = str_replace('/fckeditor/editor/../..', '', $_POST['content']);
-
 					// get all data
 					$article = array(
 						'id' => $_POST['id'],
