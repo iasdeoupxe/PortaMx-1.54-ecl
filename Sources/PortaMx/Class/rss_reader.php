@@ -146,7 +146,7 @@ class pmxc_rss_reader extends PortaMxC_SystemBlock
 			// find the first post
 			reset($this->rsscontent);
 			for($i = 0; $i < $this->startpage; $i++)
-				list($pid, $post) = each($this->rsscontent);
+				list($pid, $post) = PMX_Each($this->rsscontent);
 
 			// only one? .. clear split
 			if(count($this->rsscontent) - $this->startpage == 1)
@@ -172,7 +172,7 @@ class pmxc_rss_reader extends PortaMxC_SystemBlock
 				// write out the left part..
 				while(!empty($this->half))
 				{
-					list($pid, $post) = each($this->rsscontent);
+					list($pid, $post) = PMX_Each($this->rsscontent);
 					$this->pmxc_ShowPost($pid, $post, $isEQ, $this->half == 1);
 					next($this->rsscontent);
 					$this->half--;
@@ -186,14 +186,14 @@ class pmxc_rss_reader extends PortaMxC_SystemBlock
 				// shift post by 1..
 				reset($this->rsscontent);
 				for($i = -1; $i < $this->startpage; $i++)
-					list($pid, $post) = each($this->rsscontent);
+					list($pid, $post) = PMX_Each($this->rsscontent);
 
 				// write out the right part..
 				while($this->is_last - $this->spanlast > 0)
 				{
-					list($pid, $post) = each($this->rsscontent);
+					list($pid, $post) = PMX_Each($this->rsscontent);
 					$this->pmxc_ShowPost($pid, $post, $isEQ, $this->is_last == 1 && empty($this->spanlast));
-					list($pid, $post) = each($this->rsscontent);
+					list($pid, $post) = PMX_Each($this->rsscontent);
 					$this->is_last--;
 				}
 
@@ -221,7 +221,7 @@ class pmxc_rss_reader extends PortaMxC_SystemBlock
 				// each post in a row
 				while(!empty($this->is_last))
 				{
-					list($pid, $post) = each($this->rsscontent);
+					list($pid, $post) = PMX_Each($this->rsscontent);
 					$this->pmxc_ShowPost($pid, $post, false, $this->is_last == 1);
 					$this->half--;
 					$this->is_last--;
