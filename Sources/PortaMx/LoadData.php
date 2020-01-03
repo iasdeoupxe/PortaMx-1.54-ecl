@@ -688,7 +688,7 @@ function PortaMx_getCssDefs(&$css)
 				$ctheme = Pmx_StrToArray($def->attributes['theme']);
 				if(!empty($ctheme))
 				{
-					while(!empty($thmask) && (list($d, $th) = each($ctheme)))
+					while(!empty($thmask) && (list($d, $th) = PMX_Each($ctheme)))
 						$thmask = ($th{0} == '^' ? (substr($th, 1) == $settings['theme_id'] ? false : $thmask) : ($th == $settings['theme_id'] ? $thmask : false));
 				}
 				$result['class'][$cname] = (!empty($thmask) && !empty($ctheme) ? $def->content : '');
@@ -1083,7 +1083,7 @@ function PortaMx_getSettings($from_eclinit = false)
 		$context['pmx']['languages'][$language] = true;
 
 	reset($context['pmx']['languages']);
-	while((list($context['pmx']['currlang'], $sel) = each($context['pmx']['languages'])) && empty($sel));
+	while((list($context['pmx']['currlang'], $sel) = PMX_Each($context['pmx']['languages'])) && empty($sel));
 
 	$context['pmx']['html_footer'] = '
 	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
@@ -1346,7 +1346,7 @@ function PortaMx_getCatByID($cats, $id)
 	if(is_array($cats))
 	{
 		reset($cats);
-		while((list($ofs, $cat) = each($cats)) && empty($fnd))
+		while((list($ofs, $cat) = PMX_Each($cats)) && empty($fnd))
 		{
 			if((is_numeric($id) && $cat['id'] == $id) || (is_string($id) && $cat['name'] == $id))
 				$fnd = $cat;
@@ -1367,7 +1367,7 @@ function PortaMx_getCatByOrder($cats, $order, $dept = 0)
 	reset($cats);
 	do
 	{
-		@list($d, $cat) = each($cats);
+		@list($d, $cat) = PMX_Each($cats);
 		if(isset($cat['childs']) && is_array($cat['childs']) && $cat['catorder'] != $order)
 		{
 			$cat = PortaMx_getCatByOrder($cat['childs'], $order, $dept +1);
@@ -1408,7 +1408,7 @@ function find_cat_insert_pos(&$cats, $cat, $id)
 	$fnd = false;
 	reset($cats);
 
-	while((list($ofs, $data) = each($cats)) && empty($fnd))
+	while((list($ofs, $data) = PMX_Each($cats)) && empty($fnd))
 	{
 		if($data['id'] == $id)
 		{
@@ -1919,7 +1919,7 @@ function pmx_checkCustActions(&$bits, $item, $actname)
 		$autoAny = true;
 
 		// loop through all entrys until we found one
-		while((list($idxPos, $aix) = each($indexes)) && empty($fnd))
+		while((list($idxPos, $aix) = PMX_Each($indexes)) && empty($fnd))
 		{
 			$hideAct = strpos($actions[$keyCtl][$indexes[$idxPos]], '^') === false;
 
@@ -2017,7 +2017,7 @@ function pmx_checkActions($actionlist, $actname, $check = true)
 	if(!empty($getacts) || empty($check))
 	{
 		$actions = explode(';', $actionlist);
-		while(empty($fnd) && (@list($d, $action) = each($actions)) && !empty($action))
+		while(empty($fnd) && (@list($d, $action) = PMX_Each($actions)) && !empty($action))
 		{
 			@list($act, $val) = explode('=', (strpos($action, '=') === false ? $actname .'=' : '') . $action);
 			$val = str_replace(array('*','?'), array('.*','.?'), $val);
@@ -2897,5 +2897,13 @@ function PortaMx_headers($action = '')
 			sCookieValue: \''. $options['collapse_'. $pname] .'\'
 		}
 	});', false, false);
+}
+
+// Custom each() function for deprecated PHP each() function.
+function PMX_Each(&$arr) {
+	$key = key($arr);
+	$result = ($key === null) ? false : [$key, current($arr), 'key' => $key, 'value' => current($arr)];
+	next($arr);
+	return $result;
 }
 ?>

@@ -171,7 +171,7 @@ function PortaMx_AdminBlocks()
 					// move rowpos
 					elseif(!empty($_POST['upd_rowpos']))
 					{
-						list($side) = each($_POST['upd_rowpos']);
+						list($side) = PMX_Each($_POST['upd_rowpos']);
 						list($fromID, $place, $toID) = Pmx_StrToArray($_POST['upd_rowpos'][$side]['rowpos']);
 
 						$request = $smcFunc['db_query']('', '

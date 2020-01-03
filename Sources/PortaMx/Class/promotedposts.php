@@ -372,7 +372,7 @@ class pmxc_promotedposts extends PortaMxC_SystemBlock
 		// find the first post
 		reset($this->posts);
 		for($i = 0; $i < $this->startpage; $i++)
-			list($pid, $post) = each($this->posts);
+			list($pid, $post) = PMX_Each($this->posts);
 
 		// only one? .. clear split
 		if(count($this->posts) - $this->startpage == 1)
@@ -398,7 +398,7 @@ class pmxc_promotedposts extends PortaMxC_SystemBlock
 			// write out the left part..
 			while(!empty($this->half))
 			{
-				list($pid, $post) = each($this->posts);
+				list($pid, $post) = PMX_Each($this->posts);
 				$this->pmxc_ShowPost($pid, $post, $isEQ, $this->half == 1);
 				next($this->posts);
 				$this->half--;
@@ -412,14 +412,14 @@ class pmxc_promotedposts extends PortaMxC_SystemBlock
 			// shift post by 1..
 			reset($this->posts);
 			for($i = -1; $i < $this->startpage; $i++)
-				list($pid, $post) = each($this->posts);
+				list($pid, $post) = PMX_Each($this->posts);
 
 			// write out the right part..
 			while($this->is_last - $this->spanlast > 0)
 			{
-				list($pid, $post) = each($this->posts);
+				list($pid, $post) = PMX_Each($this->posts);
 				$this->pmxc_ShowPost($pid, $post, $isEQ, $this->is_last == 1 && empty($this->spanlast));
-				list($pid, $post) = each($this->posts);
+				list($pid, $post) = PMX_Each($this->posts);
 				$this->is_last--;
 			}
 
@@ -447,7 +447,7 @@ class pmxc_promotedposts extends PortaMxC_SystemBlock
 			// each post in a row
 			while(!empty($this->is_last))
 			{
-				list($pid, $post) = each($this->posts);
+				list($pid, $post) = PMX_Each($this->posts);
 				$this->pmxc_ShowPost($pid, $post, false, $this->is_last == 1);
 				$this->half--;
 				$this->is_last--;
