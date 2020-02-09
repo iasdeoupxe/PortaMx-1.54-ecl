@@ -164,7 +164,7 @@ $settings_data = array(
 	'areas' => 'pmx_center,pmx_settings,pmx_blocks,pmx_categories,pmx_articles,pmx_sefengine,pmx_languages',
 	'promotes' => 'a:0:{}',
 	'tblvers' => 'a:4:{s:8:"settings";s:3:"1.0";s:6:"blocks";s:3:"1.0";s:8:"articles";s:3:"1.0";s:10:"categories";s:3:"1.0";};',
-	'lang.english' => 'a:4:{s:4:"name";s:7:"English";s:7:"version";s:4:"1.54.1";s:7:"charset";s:10:"ISO-8859-1";s:7:"langext";s:8:".english";}',
+	'lang.english' => 'a:4:{s:4:"name";s:7:"English";s:7:"version";s:4:"1.54.2";s:7:"charset";s:10:"ISO-8859-1";s:7:"langext";s:8:".english";}',
 );
 
 $blocks_data = array(
