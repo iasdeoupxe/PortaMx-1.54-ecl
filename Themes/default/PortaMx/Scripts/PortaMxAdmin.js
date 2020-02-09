@@ -4,8 +4,8 @@
 *
 * \author PortaMx - Portal Management Extension
 * \author Copyright 2008-2020 by PortaMx corp. - http://portamx.com
-* \version 1.54.1
-* \date 03.01.2020
+* \version 1.54.2
+* \date 09.02.2020
 */
 
 // show the language assigned title input

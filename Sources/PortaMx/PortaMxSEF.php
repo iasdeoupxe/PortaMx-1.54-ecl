@@ -5,8 +5,8 @@
 *
 * \author Copyright 2008-2020 by PortaMx corp. - http://portamx.com
 * \author Developer of the Original Code is Matt Zuba.
-* \version 1.54.1
-* \date 03.01.2020
+* \version 1.54.2
+* \date 09.02.2020
 *
 * BEGIN LICENSE BLOCK
 * Version: MPL 1.1
