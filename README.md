@@ -20,7 +20,7 @@ by this:
 ::1             localhost ip6-localhost ip6-loopback docserver.portamx.com portamx.com
 ```
 
-so that all requests are hitting your own hosts and not the problematic not valid domain anymore.
+so that all requests are hitting your own host and not the problematic not valid domain anymore.
 
 # PortaMx-1.54-ecl
 Portal Management Extension for SMF 2.0.x
