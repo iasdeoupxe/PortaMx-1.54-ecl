@@ -1,3 +1,7 @@
+# :warning: Deprecated :warning:
+
+PortaMx hasn't been updated since years and the vendor has vanished (see next warning). This repository has been archived, use at your own risk.
+
 # :warning: Security Warning :warning:
 
 If there is still some one using this Portal / Software this is an important security warning:
